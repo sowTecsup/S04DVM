@@ -2,7 +2,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ThirdPersonController : MonoBehaviour
+public class FirstPersonController : MonoBehaviour
 {
     public InputSystem_Actions inputs;
     private CharacterController controller;
@@ -66,7 +66,7 @@ public class ThirdPersonController : MonoBehaviour
         cameraForwardDir.Normalize();
 
 
-        if(moveInput != Vector2.zero)
+        if (moveInput != Vector2.zero)
         {
             Quaternion targetQuaternion = Quaternion.LookRotation(cameraForwardDir);
             //transform.rotation = targetQuaternion;
@@ -78,7 +78,7 @@ public class ThirdPersonController : MonoBehaviour
 
         }
 
-        Vector3 moveDir = (cameraForwardDir * moveInput.y+ transform.right * moveInput.x) * moveSpeed;
+        Vector3 moveDir = (cameraForwardDir * moveInput.y + transform.right * moveInput.x) * moveSpeed;
 
 
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
